@@ -1,0 +1,223 @@
+/* Weather App by - Prince Narola */
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("https://source.unsplash.com/1600x900/?nature,snow,strom,weather,landscape,rain");
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  width: 500px;
+  border-radius: 7px;
+  background: linear-gradient(to bottom, #33ccff 0%, #d5f2ba 100%);
+}
+
+.wrapper header {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 16px 16px;
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+}
+
+header i {
+  cursor: pointer;
+  font-size: 0px;
+  margin-right: 8px;
+}
+
+.wrapper.active header i {
+  font-size: 30px;
+  margin-left: 5px;
+}
+
+.wrapper .input-part {
+  margin: 20px 25px 30px;
+}
+
+.wrapper.active .input-part {
+  display: none;
+}
+
+.wrapper .info-txt {
+  display: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+
+.info-txt.error {
+  display: block;
+  color: #721c24;
+  background: #f8d7da;
+  border: 2px solid #f5c6cd;
+}
+
+.info-txt.pending {
+  display: block;
+  color: #0c5460;
+  background: #d1ecf1;
+  border: 2px solid #bee5eb;
+}
+
+.input-part :where(input, button) {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+.input-part input {
+  text-align: center;
+  border: 2px solid grey;
+}
+
+.input-part input:is(:focus, :valid) {
+  border: 2px solid #b7f8fd;
+}
+
+.input-part .separator {
+  height: 2px;
+  width: 100%;
+  margin: 25px 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-part button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffffdc;
+  text-shadow: none;
+  background: transparent;
+  box-shadow: transparent;
+  border: 1px solid #ffffffdc;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+#btn:hover,
+:focus {
+  color: #efe4e4;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 2px #f3f3f3, 0 0 2px #e5e5e5, 0 0 2px #e6e6e6;
+  box-shadow: 0 0 5px #008cff, 0 0 5px #008cff, 0 0 5px #008cff,
+    0 0 100px #008cff;
+}
+
+.wrapper.active .input-part {
+  display: none;
+}
+.wrapper .weather-part {
+  margin: 30px 0 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper.active .weather-part {
+  display: flex;
+}
+
+.weather-part img {
+  max-width: 125px;
+}
+
+.weather-part .temp {
+  display: flex;
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.weather-part .temp .num-2 {
+  font-weight: 600;
+}
+
+.weather-part .temp .deg {
+  font-size: 40;
+  margin: 0 5px 0 0;
+}
+.weather {
+  font-size: 25px;
+}
+.weather-part .location {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin: 10px 0 30px 0;
+}
+
+.location i {
+  font-size: 22px;
+  margin-right: px;
+}
+
+.weather-part .bottom-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid white;
+}
+
+.bottom-details .column {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column i {
+  color: white;
+  font-size: 50px;
+  margin: -4px 7px 0 0;
+}
+
+.column.humidity {
+  border-left: 2px solid white;
+}
+
+.details .temp,
+.humidity span {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: -3px;
+}
+
+.details .temp .deg {
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+
+.details p {
+  font-size: 14px;
+  margin-top: -2px;
+}
